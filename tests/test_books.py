@@ -3,12 +3,10 @@ from app.main import app
 
 client = TestClient(app)
 
-
 def test_get_all_books():
     response = client.get("/books/")
     assert response.status_code == 200
     assert isinstance(response.json(), list)
-
 
 def test_get_book_by_title():
     response = client.get("/books/Title One")
