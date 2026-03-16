@@ -15,7 +15,6 @@ from app.services.book_service import (
 
 router = APIRouter(prefix="/books", tags=["Books"])
 
-
 @router.get("/", response_model=List[BookResponse])
 async def read_books(
     category: Optional[str] = Query(default=None),
@@ -28,7 +27,6 @@ async def read_books(
     if category:
         return get_books_by_category(category)
     return get_all_books()
-
 
 @router.get("/{book_title}", response_model=BookResponse)
 async def read_book(book_title: str):
@@ -49,7 +47,6 @@ async def edit_book(book: BookUpdate):
     if not updated:
         raise HTTPException(status_code=404, detail="Book not found")
     return updated
-
 
 @router.delete("/{book_id}")
 async def remove_book(book_id: int):
