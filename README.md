@@ -21,7 +21,7 @@ A professional FastAPI project for managing books, built using a clean and scala
 ## 📂 Project Structure
 
 ```
-book_project/
+fastapi-books/
 │
 ├── app/
 │   ├── main.py
